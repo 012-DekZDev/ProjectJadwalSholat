@@ -1,17 +1,18 @@
 import { useState } from 'react'
 import PrayerTimes from './components/PrayerTimes'
 import './App.css'
-
-// useEffect(()=>{
-//   console.log("Component hanya muncul sekali")
-// },[])
+import Navbar from "./components/Navbar"
+import Footer from "./components/Footer"
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [city, setCity] = useState("Jakarta");
+  // const [count, setCount] = useState(0)
 
   return (
     <>
-      <PrayerTimes/>
+      <Navbar city={city} setCity={setCity}/>
+      <PrayerTimes city={city} className="prayerTimes"/>
+      <Footer/>
     </>
   )
 }

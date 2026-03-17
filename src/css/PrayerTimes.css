@@ -1,19 +1,78 @@
+
+.divParent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.divPrayerTimes {
+    margin-top: 50px;
+}
+
+/* .divPrayerTimes h5{
+    font-style: normal;
+} */
+
+div h1{
+    color: #E1F5EE;
+}
+
+div h2{
+    color: #E1F5EE;
+}
+
+div h5{
+    color: #9FE1CB;
+    font-weight: 400;
+}
+
+.nonActive{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #132b23;
+    color: #9FE1CB;
+    width: 600px;
+    height: 50px;
+    border-radius: 10px;
+    margin: 10px 0 10px 0;
+}
+
+.nonActive p {
+    margin: 0px 20px 0 20px;
+}
+
 .active {
-    font-size: 30px;
-    background-color: rgb(255, 255, 255);
-    color: black;
-    width: 300px;
-    height: 40px;
+    font-size: 35px;
+    background-color: #1D9E75;
+    color: #E1F5EE;
+    width: 600px;
+    height: 50px;
+    margin: 10px 0 10px 0;
     align-items: center;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     border-radius: 10px;
 }
 
-.divParent {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        color: rgb(218, 218, 218);
-        align-items: center;
-    }
+.active p{
+    margin: 0 20px 0 20px;
+}
+
+.divParent .nextPrayer {
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    width: 220px;
+    height: 35px;
+    align-items: center;
+    font-size: 15px;
+    color: #9FE1CB;
+    gap: 5px;
+    background-color: #132b23;
+    margin: 15px 0 0 0;
+}
+
+.divParent .nextPrayer .pNextPrayer{
+    color: #E1F5EE;
+}

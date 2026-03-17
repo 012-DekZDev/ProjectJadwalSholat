@@ -1,9 +1,8 @@
 import { useState , useEffect } from "react";
 import "../css/PrayerTimes.css"
 
-function PrayerTimes() {
+function PrayerTimes({city}) {
     const [times, setTimes] = useState(null)
-    const [city, setCity] = useState("Jakarta")
     const [currentTime, setCurrentTime] = useState(new Date())
     const now = new Date()
     const currentHour = now.getHours()
@@ -68,59 +67,81 @@ function PrayerTimes() {
             isIsha = true;
             console.log("Isya");
         }
-        let fajrClasss = "";
+        let fajrClass = "";
         let dhuhrClass = "";
         let asrClass = "";
         let maghribClass = "";
         let ishaClass = "";
         let nextPrayer = "";
         if (isFajr) {
-            fajrClasss = "active";
+            fajrClass = "active";
+            dhuhrClass  ="nonActive";
+            asrClass  ="nonActive";
+            maghribClass  ="nonActive";
+            ishaClass  ="nonActive";
             nextPrayer = "Zuhur";
         }else if (isDhuhr) {
+            fajrClass = "nonActive";
             dhuhrClass =  "active";
+            asrClass  ="nonActive";
+            maghribClass  ="nonActive";
+            ishaClass  ="nonActive";
             nextPrayer = "Ashar"
         }else if(isAsr){
-            asrClass = "active";
+            fajrClass = "nonActive";
+            dhuhrClass =  "nonActive";
+            asrClass  ="active";
+            maghribClass  ="nonActive";
+            ishaClass  ="nonActive";
             nextPrayer = "Maghrib"
         }else if (isMaghrib) {
-            maghribClass = "active";
+            fajrClass = "nonActive";
+            dhuhrClass =  "nonActive";
+            asrClass  ="nonActive";
+            maghribClass  ="active";
+            ishaClass  ="nonActive";
             nextPrayer = "Isya";
         }else if (isIsha) {
-            ishaClass = "active";
+            fajrClass = "nonActive";
+            dhuhrClass =  "nonActive";
+            asrClass  ="nonActive";
+            maghribClass  ="nonActive";
+            ishaClass  ="active";
             nextPrayer = "Subuh";
         }
         // console.log(times.data.timings)
         return (
             <>
-            <div>
-                <h1>Jadwal Sholat Hari Ini</h1>
-                <h2>Tanggal  {times.data.date.readable}</h2>
-                <h2>Wilayah {city}</h2>
-                <h2>Jam Sekarang : {currentTime.toLocaleTimeString(`id-ID`, {hour12:false})}</h2>
+            <div className="divPrayerTimes">
+                <h2>Jadwal Sholat Hari Ini</h2>
+                <h5>Tanggal  {times.data.date.readable}</h5>
+                <h1>{currentTime.toLocaleTimeString(`id-ID`, {hour12:false})}</h1>
                 <div className="divParent">
-                    <div className={fajrClasss}>
-                        <p>Subuh : {times.data.timings.Fajr}</p>
+                    <div className={fajrClass}>
+                        <p>Subuh</p>
+                        <p>{times.data.timings.Fajr}</p>
                     </div>
                     <div className={dhuhrClass}>
-                        <p>Zuhur : {times.data.timings.Dhuhr}</p>
+                        <p>Zuhur</p>
+                        <p>{times.data.timings.Dhuhr}</p>
                     </div>
                     <div className={asrClass}>
-                        <p>Ashar : {times.data.timings.Asr}</p>
+                        <p>Ashar</p>
+                        <p>{times.data.timings.Asr}</p>
                     </div>
                     <div className={maghribClass}>
-                        <p>Maghrib : {times.data.timings.Maghrib}</p>
+                        <p>Maghrib</p>
+                        <p>{times.data.timings.Maghrib}</p>
                     </div>
                     <div className={ishaClass}>
-                        <p>Isya : {times.data.timings.Isha}</p>
+                        <p>Isya</p>
+                        <p>{times.data.timings.Isha}</p>
+                    </div>
+                    <div className="nextPrayer">
+                        <p>Sholat selanjutnya: </p>
+                        <p className="pNextPrayer">{nextPrayer}</p>
                     </div>
                 </div>
-                <p>Sholat selanjutnya {nextPrayer}</p>
-                <select id="" onChange={(eventObject)=> setCity(eventObject.target.value)}>
-                    <option value="Jakarta">Jakarta</option>
-                    <option value="Bandung">Bandung</option>
-                    <option value="Surabaya">Surabaya</option>
-                </select>
             </div>
             </>
         )
