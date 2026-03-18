@@ -1,17 +1,9 @@
 import { useState , useEffect } from "react";
 import "../css/PrayerTimes.css"
 
-function PrayerTimes({city}) {
-    const [times, setTimes] = useState(null)
-    const [currentTime, setCurrentTime] = useState(new Date())
-    const now = new Date()
-    const currentHour = now.getHours()
-    const currentMinute = now.getMinutes()
-    useEffect(()=>{
-        setInterval(() => {
-            setCurrentTime(new Date())
-        }, 1000);
-    },[])
+function PrayerTimes({city, times,setTimes, currentTime}) {
+    const currentHour = currentTime.getHours()
+    const currentMinute = currentTime.getMinutes()
     // const currentHour = 40
     // const currentMinute = 39
     useEffect(()=>{
@@ -37,12 +29,14 @@ function PrayerTimes({city}) {
         const [maghribHour, maghribMinute] = maghribTime.split(":").map(x => Number(x));
         const ishaTime = times.data.timings.Isha;
         const [ishaHour, ishaMinute] = ishaTime.split(":").map(x => Number(x));
+        const sunrise = times.data.timings.Sunrise;
+        const [sunriseHour, sunriseMinute] = sunrise.split(":").map(x => Number(x))
         let isFajr = false;
         let isDhuhr = false;
         let isAsr = false;
         let isMaghrib = false;
         let isIsha = false;
-        if ((currentHour > fajrHour || (currentHour === fajrHour && currentMinute >= fajrMinute)) && (currentHour < dhuhrHour || (currentHour === dhuhrHour && currentMinute < dhuhrMinute))) {
+        if ((currentHour > fajrHour || (currentHour === fajrHour && currentMinute >= fajrMinute)) && (currentHour < sunriseHour || (currentHour === sunriseHour && currentMinute < sunriseMinute))) {
             isIsha = false;
             isFajr = true;
             console.log("Subuh")
@@ -62,7 +56,7 @@ function PrayerTimes({city}) {
             isMaghrib = true;
             console.log("Maghrib")
         }
-        else {
+        else if((currentHour > ishaHour || (currentHour === ishaHour && currentMinute > ishaMinute)) && (currentHour < fajrHour || (currentHour === fajrHour && currentMinute < fajrMinute))){
             isMaghrib = false;
             isIsha = true;
             console.log("Isya");
@@ -108,6 +102,14 @@ function PrayerTimes({city}) {
             maghribClass  ="nonActive";
             ishaClass  ="active";
             nextPrayer = "Subuh";
+        }
+        else{
+            fajrClass = "nonActive";
+            dhuhrClass =  "nonActive";
+            asrClass  ="nonActive";
+            maghribClass  ="nonActive";
+            ishaClass  ="nonActive";
+            nextPrayer = "Zuhur";
         }
         // console.log(times.data.timings)
         return (

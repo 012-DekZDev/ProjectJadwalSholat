@@ -36,6 +36,7 @@ div h5{
     height: 50px;
     border-radius: 10px;
     margin: 10px 0 10px 0;
+    border: 1px solid #556b64;  
 }
 
 .nonActive p {
@@ -53,6 +54,7 @@ div h5{
     display: flex;
     justify-content: space-between;
     border-radius: 10px;
+    border: 1px solid #556b64;  
 }
 
 .active p{
@@ -71,6 +73,7 @@ div h5{
     gap: 5px;
     background-color: #132b23;
     margin: 15px 0 0 0;
+    border: 1px solid #556b64;  
 }
 
 .divParent .nextPrayer .pNextPrayer{

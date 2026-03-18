@@ -1,0 +1,37 @@
+.divFooter{
+    margin-top: 100px;
+    padding-top: 30px;
+    background-color: #0a1a16;
+}
+
+.divFooter .divFooterPrayer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* .divFooter .divFooterPrayer div{
+    background-color: #132b23;
+    color: #9FE1CB;
+    width: 220px;
+    border-radius: 10px;
+    margin: 0 0 15px 0;
+} */
+
+.nonActive{
+    background-color: #132b23;
+    color: #9FE1CB;
+    width: 220px;
+    border-radius: 10px;
+    margin: 0 0 15px 0;
+    border: 1px solid #556b64;  
+}
+
+.active{
+    background-color: #1D9E75;
+    color: #E1F5EE;
+    width: 220px;
+    border-radius: 10px;
+    margin: 0 0 15px 0;
+    border: 1px solid #556b64;  
+}
