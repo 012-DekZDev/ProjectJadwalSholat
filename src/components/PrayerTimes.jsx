@@ -1,5 +1,10 @@
 import { useState , useEffect } from "react";
 import "../css/PrayerTimes.css"
+import nightUpImage from "../assets/img/moon(1).png";
+import afternoonImage from "../assets/img/nature.png";
+import dawndownImage from "../assets/img/moon(2).png";
+import sunsetImage from "../assets/img/sunset.png"
+import afternoonLateImage from "../assets/img/sunset(2).png"
 
 function PrayerTimes({city, times,setTimes, currentTime}) {
     const currentHour = currentTime.getHours()
@@ -56,7 +61,7 @@ function PrayerTimes({city, times,setTimes, currentTime}) {
             isMaghrib = true;
             console.log("Maghrib")
         }
-        else if((currentHour > ishaHour || (currentHour === ishaHour && currentMinute > ishaMinute)) && (currentHour < fajrHour || (currentHour === fajrHour && currentMinute < fajrMinute))){
+        else if((currentHour > ishaHour || (currentHour === ishaHour && currentMinute >= ishaMinute)) || (currentHour < fajrHour || (currentHour === fajrHour && currentMinute < fajrMinute))){
             isMaghrib = false;
             isIsha = true;
             console.log("Isya");
@@ -116,27 +121,42 @@ function PrayerTimes({city, times,setTimes, currentTime}) {
             <>
             <div className="divPrayerTimes">
                 <h2>Jadwal Sholat Hari Ini</h2>
-                <h5>Tanggal  {times.data.date.readable}</h5>
-                <h1>{currentTime.toLocaleTimeString(`id-ID`, {hour12:false})}</h1>
+                <h5 className="date">Tanggal  {times.data.date.readable}</h5>
+                <h1 className="currentTime">{currentTime.toLocaleTimeString(`id-ID`, {hour12:false})}</h1>
                 <div className="divParent">
                     <div className={fajrClass}>
-                        <p>Subuh</p>
+                        <div>
+                            <img className="logo" src={dawndownImage}/>
+                            <p>Subuh</p>
+                        </div>
                         <p>{times.data.timings.Fajr}</p>
                     </div>
                     <div className={dhuhrClass}>
-                        <p>Zuhur</p>
+                        <div>
+                            <img className="logo" src={afternoonImage} alt="" />
+                            <p>Zuhur</p>
+                        </div>
                         <p>{times.data.timings.Dhuhr}</p>
                     </div>
                     <div className={asrClass}>
-                        <p>Ashar</p>
+                        <div>
+                            <img className="logo" src={afternoonLateImage} alt="" />
+                            <p>Ashar</p>
+                        </div>
                         <p>{times.data.timings.Asr}</p>
                     </div>
                     <div className={maghribClass}>
-                        <p>Maghrib</p>
+                        <div>
+                            <img className="logo" src={sunsetImage} alt="" />
+                            <p>Maghrib</p>
+                        </div>
                         <p>{times.data.timings.Maghrib}</p>
                     </div>
                     <div className={ishaClass}>
-                        <p>Isya</p>
+                        <div>
+                            <img className="logo" src={nightUpImage} alt="" />
+                            <p>Isya</p>
+                        </div>
                         <p>{times.data.timings.Isha}</p>
                     </div>
                     <div className="nextPrayer">

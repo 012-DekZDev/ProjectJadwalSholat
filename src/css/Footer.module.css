@@ -1,6 +1,6 @@
 .divFooter{
-    margin-top: 100px;
-    padding-top: 30px;
+    margin-top: 35px;
+    padding-top: 35px;
     background-color: #0a1a16;
 }
 
@@ -19,6 +19,9 @@
 } */
 
 .nonActive{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #132b23;
     color: #9FE1CB;
     width: 220px;
@@ -28,10 +31,65 @@
 }
 
 .active{
+    display: flex;
+    justify-content: center;
     background-color: #1D9E75;
     color: #E1F5EE;
     width: 220px;
     border-radius: 10px;
     margin: 0 0 15px 0;
     border: 1px solid #556b64;  
+}
+
+.nonActive div{
+    margin-right: 10px;
+}
+
+.active div{
+    margin-right: 10px;
+}
+
+.nonActive img{
+    margin-left: 10px;
+    width: 20%;
+    height: 20%;
+}
+
+.active img{
+    margin-left: 10px;
+    width: 20%;
+    height: 20%;
+}
+
+
+@media (max-width: 1100px){
+    .divFooter{
+        margin-top: 25px;
+        padding-top: 30px;
+    }
+    .divFooterPrayer{
+        padding-bottom: 20px;
+    }
+    .divFooter p{
+        font-size: 13px;
+    }
+    .nonActive {
+        width: 115px;
+        height: 50px;
+    }
+    .nonActive img{
+        width: 35%;
+        height: 70%;
+    }
+    .active img{
+        width: 35%;
+        height: 70%;
+    }
+    .active {
+        width: 115px;
+        height: 50px;
+    }
+    .surah{
+        font-size: 15px;
+    }
 }
