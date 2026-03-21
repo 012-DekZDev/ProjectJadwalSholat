@@ -10,7 +10,7 @@
 }
 
 .logo{
-    width: 10%;
+    width: 20%;
 }
 
 div h1{
@@ -22,7 +22,7 @@ div h2{
 }
 
 div h5{
-    color: #9FE1CB;
+    color: var(--accent-light);
     font-weight: 400;
 }
 
@@ -30,8 +30,8 @@ div h5{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #132b23;
-    color: #9FE1CB;
+    background-color: var(--card);
+    color: var(--accent-light);
     width: 610px;
     height: 60px;
     border-radius: 10px;
@@ -45,7 +45,7 @@ div h5{
 
 .active {
     font-size: 35px;
-    background-color: #1D9E75;
+    background-color: var(--accent);
     color: #E1F5EE;
     width: 610px;
     height: 70px;
@@ -81,9 +81,9 @@ div h5{
     height: 35px;
     align-items: center;
     font-size: 15px;
-    color: #9FE1CB;
+    color: var(--accent-light);
     gap: 5px;
-    background-color: #132b23;
+    background-color: var(--card);
     margin: 15px 0 0 0;
     border: 1px solid #556b64;  
 }

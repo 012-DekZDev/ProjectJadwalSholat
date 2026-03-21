@@ -3,7 +3,6 @@ import moonDown from "../assets/img/moon(2).png";
 import dawn from "../assets/img/dawn.png";
 import night from "../assets/img/night.png";
 
-
 function Footer({times, currentTime}) {
     if (!times) {
         return(

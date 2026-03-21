@@ -183,7 +183,7 @@
   }
 } */
 body{
-  background-color: #0d1f1a;
+  background-color: var(--bg)
 }
 /* .prayerTimes{
   margin-top: 30px;

@@ -2,19 +2,25 @@ nav{
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    background-color: #0a1a16;
+    background-color: var(--nav-bg); 
     align-items: center;
 }
 
+.divNav{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
 nav h3 {
-    color: #9FE1CB;
+    color: var(--accent-light);
     margin: 0;
     font-weight: 350;
 }
 
 nav select{
-    color: #9FE1CB;
-    background-color: #132b23;
+    color: var(--accent-light);
+    background-color: var(--card);
     border-radius: 10px;
     padding: 10px 0px 10px 15px;
 }

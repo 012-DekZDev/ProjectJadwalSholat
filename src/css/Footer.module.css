@@ -1,7 +1,15 @@
 .divFooter{
     margin-top: 35px;
     padding-top: 35px;
-    background-color: #0a1a16;
+    background-color: var(--nav-bg);
+}
+
+.divFooter p{
+    color: var(--accent-light);
+}
+
+.divFooter h3 {
+    color: var(--accent-light);
 }
 
 .divFooter .divFooterPrayer{
@@ -10,20 +18,12 @@
     align-items: center;
 }
 
-/* .divFooter .divFooterPrayer div{
-    background-color: #132b23;
-    color: #9FE1CB;
-    width: 220px;
-    border-radius: 10px;
-    margin: 0 0 15px 0;
-} */
-
 .nonActive{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #132b23;
-    color: #9FE1CB;
+    background-color: var(--card);
+    color: var(--accent-light);
     width: 220px;
     border-radius: 10px;
     margin: 0 0 15px 0;
@@ -33,7 +33,7 @@
 .active{
     display: flex;
     justify-content: center;
-    background-color: #1D9E75;
+    background-color: var(--accent);
     color: #E1F5EE;
     width: 220px;
     border-radius: 10px;

@@ -32,24 +32,25 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+    --bg: #0a1a16;
+    --card: #132b23;
+    --accent: #1D9E75;
+    --accent-light: #9FE1CB;
+    --accent-active-text: #E1F5EE;
+    --border: #556b64;
+    --nav-bg: #061410;  
   }
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
+  :root.blue {
+    --bg: #080f1a;
+    --card: #0f1e33;
+    --accent: #1a7abf;
+    --accent-light: #90c8e8;
+    --accent-active-text: #f0f8ff;
+    --border: #1e3a5f;
+    --nav-bg: #050b14;
   }
 }
-
 body {
   margin: 0;
 }
