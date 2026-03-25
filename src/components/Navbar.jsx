@@ -7,7 +7,7 @@ function Navbar({city, setCity, isGreen, onToggle}) {
         <nav>
             <h3>Wilayah: {city}</h3>
             <div className="divNav">
-                <ToggleButton isGreen={isGreen} onToggle={onToggle}/>
+                <ToggleButton className="toggleButton" isGreen={isGreen} onToggle={onToggle}/>
                 <select onChange={(eventobject) => setCity(eventobject.target.value)}>
                     <option value="Jakarta">Jakarta</option>
                     <option value="Bandung">Bandung</option>

@@ -1,0 +1,48 @@
+/* Track (container luar) */
+.track {
+    width: 56px;
+    height: 28px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 1px solid #556b64;
+    }
+
+    /* Lingkaran dalam */
+.thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: white;
+    transition: transform 0.3s ease;
+    }
+
+    /* Responsif — tablet */
+@media (max-width: 768px) {
+    .track {
+        width: 44px;
+        height: 22px;
+        padding: 2px;
+    }
+
+.thumb {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+    /* Responsif — mobile */
+@media (max-width: 480px) {
+    .track {
+        width: 36px;
+        height: 18px;
+        padding: 2px;
+    }
+    .thumb {
+        width: 14px;
+        height: 14px;
+    }
+}
